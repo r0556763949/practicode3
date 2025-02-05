@@ -31,7 +31,7 @@ public partial class ToDoDbContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PRIMARY");
 
-            entity.ToTable("tasks");
+            entity.ToTable("Task");
 
             entity.Property(e => e.Name).HasMaxLength(100);
         });

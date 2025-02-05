@@ -51,13 +51,12 @@ app.MapPost("/task", async (ToDoDbContext context, TodoApi.Task newItem) =>
     return Results.Created($"/tasks/{newItem.Id}", newItem);
 });
 
-app.MapPut("/task/{id}", async (ToDoDbContext context, int id, TodoApi.Task updatedItem) =>
+app.MapPut("/task/{id}", async (ToDoDbContext context, int id) =>
 {
     var existingItem = await context.Tasks.FindAsync(id);
     if (existingItem is null) return Results.NotFound();
 
-    existingItem.Name = updatedItem.Name;
-    existingItem.IsComplete = updatedItem.IsComplete;
+    existingItem.IsComplete = !existingItem.IsComplete;
 
     await context.SaveChangesAsync();
     return Results.NoContent();

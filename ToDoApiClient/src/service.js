@@ -27,7 +27,7 @@ export default {
     console.log('addTask', name);
     const newTask = {
       name: name,
-      completed: false 
+      IsComplete: false 
     };
     try {
       const response = await axios.post(`/task`, newTask);
@@ -38,10 +38,10 @@ export default {
     }
   },
 
-  setCompleted: async (id, isComplete) => {
-    console.log('setCompleted', { id, isComplete });
+  setCompleted: async (id) => {
+    console.log('setCompleted', { id });
     try {
-      const response = await axios.put(`/task/${id}`, { IsComplete: isComplete });
+      const response = await axios.put(`/task/${id}`);
       return response; 
     } catch (error) {
       console.log('Error updating task:', error);
