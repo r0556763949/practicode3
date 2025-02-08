@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // הגדרת כתובת ה-API כ-default
-axios.defaults.baseURL = "http://localhost:5047";
+axios.defaults.baseURL = "https://practicode3-server-3i8z.onrender.com";
 
 // הוספת interceptor לתפיסת שגיאות
 axios.interceptors.response.use(
