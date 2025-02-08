@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // הגדרת כתובת ה-API כ-default
-axios.defaults.baseURL = "https://practicode3-server-3i8z.onrender.com";
+axios.defaults.baseURL = process.env.REACT_APP_API;
 
 // הוספת interceptor לתפיסת שגיאות
 axios.interceptors.response.use(
