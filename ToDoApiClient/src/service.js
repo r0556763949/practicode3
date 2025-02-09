@@ -7,7 +7,7 @@ axios.defaults.baseURL = process.env.REACT_APP_API;
 axios.interceptors.response.use(
   response => response,
   error => {
-    console.error('Response error:', error); // רושם את השגיאה ללוג
+    console.error('Response error!:', error); // רושם את השגיאה ללוג
     return Promise.reject(error);
   }
 );
