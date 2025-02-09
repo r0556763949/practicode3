@@ -14,5 +14,3 @@ yarn-error.log
 logs/
 *.log
 
-# Ignore environment files
-.env
